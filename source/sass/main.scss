@@ -1,0 +1,150 @@
+@import 'vendor.scss';
+@import 'variable.scss';
+@import 'fonts.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: $fontDefault;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background: #fbf8ca;
+}
+
+.main { 
+	width: $WidthMain;
+	margin: 60px auto 0 auto;
+	position: relative;
+}
+
+.box_princes {
+	width: 280px;
+	background: $bgBox;
+	text-align: center;
+	border-top-left-radius: 13px;
+	border-top-right-radius: 13px;
+	float: left;
+	position: relative;
+	height: 500px;
+
+	&:last-child{
+		right: 20px;
+		float: right;
+	}
+	&:first-child{
+		left: 20px;
+	}
+}
+
+.box_princes_larger {
+	@extend .box_princes;
+	margin-top: -20px;
+	z-index: -99999;
+	width: 340px;
+	position: absolute;
+	left: 30%;
+	margin-left: auto;
+	margin-right: auto;
+	top: -20px;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	height: 580px;
+}
+.number_princes {
+	color: $colorPrimaryBox;
+	font-size: $titlePrinces;
+	position: relative;
+	margin: 0;
+
+	&:after {
+		content: '/mo';
+		font-size: $titlePrinces - 60;
+		color: $colorSymbolsLess; 
+	}
+
+	&:before {
+		content: '$';
+		font-size: $titlePrinces - 60;
+		position: absolute;
+		top: 20px;
+		text-indent: -25px;
+		display: inline-block;
+		color: $colorSymbolsLess;
+	}
+}
+
+.princes_larger {
+	background: $bgPrincesLarge;
+	border-top-left-radius: 13px;
+	border-top-right-radius: 13px;
+	padding: 59.5px 0;
+
+	.number_princes{
+		&:after, &:before{
+			color: $colorSymbolsLarger;
+		}
+	}
+}
+
+.princes_less {
+	background: $bgPrinces;
+	border-top-left-radius: 13px;
+	border-top-right-radius: 13px;
+	padding: 40px 0;
+}
+
+.categories {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 14px;
+	color: $colorCategories;
+}
+
+.list_options {
+	width: 70%;
+	margin: 0 auto;
+}
+.options_item {
+	text-align: left;
+	color: $colorOptionsItem;
+	font-size: 16px;
+	font-weight: 700;
+	margin: 15px 0;
+	&:before{
+		content: '• ';
+		padding-right: 5px;
+		color: $colorBeforeItem;
+	}
+}
+
+.btn {
+	padding: 10px 50px;
+	border-radius: 20px;
+	text-transform: uppercase;
+	color: #FFF;
+	font-size: 12px;
+	font-weight: bold;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	bottom: 20px;
+	width: 35%;
+	box-shadow: 1px 1px 20px rgba(28, 48, 146, 0.2);
+}
+
+.btn_princes_less {
+	background: $bgButtonLess;
+}
+
+.btn_princes_larger {
+	background: $bgButtonLarger;
+}
